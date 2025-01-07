@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>empmgrdata</h1>
+        <table border="3px">
+            <tr>
+                <th>EMPNO</th>
+                <th>ENAME</th>
+                <th>JOB</th>
+                <th>SAL</th>
+                
+                <th>COMM</th>
+                <th>DEPTNO</th>
+                <th>HIREDATE</th>
+                <th>MGR</th>
+                
+                <th>M EMPNO</th>
+                <th>M ENAME</th>
+                
+            </tr>
+            {% for emo in LEMO %}
+            <tr>
+
+                <td>{{emo.EMPNO}}</td>
+
+                <td>{{emo.ENAME}}</td>
+                
+                <td>{{emo.JOB}}</td>
+                
+                <td>{{emo.SAL}}</td>
+                
+                
+                
+                <td>{{emo.COMM}}</td>
+                
+                <td>{{emo.DEPTNO}}</td>
+                
+                <td>{{emo.HIREDATE}}</td>
+                
+                <td>{{emo.MGR}}</td>
+                
+                <td>{{emo.MGR.EMPNO}}</td>
+                
+                <td>{{emo.MGR.ENAME}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    
+</body>
+</html>

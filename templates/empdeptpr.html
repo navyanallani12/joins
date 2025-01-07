@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <center>
+        <h1>empdeptbyprefech</h1>
+
+        {% for DEO in LDEO %}
+            <h1>DNAME is {{DEO.DNAME}}
+                DEPTNO is {{DEO.DEPTNO}}
+                DLOC is {{DEO.LOC}}</h1>
+
+            <table border="3px">
+                <tr>
+                    <th>ENAME</th>
+                    <th>EMPNO</th>
+                    <th>SAL</th>
+                </tr>
+                {% for eo in DEO.emp_set.all %}
+                <tr>
+                    <td>{{eo.ENAME}}</td>
+                    <td>{{eo.EMPNO}}</td>
+                
+                    <td>{{eo.SAL}}</td>
+                </tr>
+                {% endfor %}
+            
+            </table>    
+
+        {% endfor %}
+    </center>
+    
+</body>
+</html>

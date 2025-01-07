@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>empdeptdata</h1>
+        <table border="3px">
+            <tr>
+                <th>EMPNO</th>
+                <th>ENAME</th>
+                <th>JOB</th>
+                <th>SAL</th>
+                <th>MGR</th>
+                <th>COMM</th>
+                <th>DEPTNO</th>
+                <th>HIREDATE</th>
+                <th>DNAME</th>
+                <th>LOC</th>
+                <th>DEPTNO</th>
+            </tr>
+            {% for edo in LEDO %}
+                <tr>
+                    <td>{{edo.EMPNO}}</td>
+    
+                    <td>{{edo.ENAME}}</td>
+                    
+                    <td>{{edo.JOB}}</td>
+                    
+                    <td>{{edo.SAL}}</td>
+                    
+                    <td>{{edo.MGR}}</td>
+                    
+                    <td>{{edo.COMM}}</td>
+                    
+                    <td>{{edo.DEPTNO}}</td>
+                    
+                    <td>{{edo.HIREDATE}}</td>
+                    
+                    <td>{{edo.DEPTNO.DNAME}}</td>
+                    
+                    <td>{{edo.DEPTNO.LOC}}</td>
+                    
+                    <td>{{edo.DEPTNO.DEPTNO}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </center>
+    
+</body>
+</html>
