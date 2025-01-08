@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.db.models import Q
+from django.db.models import Q,Prefetch
+
 
 # Create your views here.
 from app.models import *
@@ -34,6 +36,11 @@ def empmgrdept(request):
 
 def empdeptpr(request):
     LDEO=Dept.objects.prefetch_related ('emp_set').all()
+    LDEO=Dept.objects.prefetch_related ('emp_set').filter(DEPTNO=10)
+    LDEO=Dept.objects.prefetch_related(Prefetch('emp_set',queryset=Emp.objects.filter(ENAME='swathi')))
+    DN=Emp.objects.filter(ENAME='swathi').values_list('DEPTNO')
+    LDEO=Dept.objects.filter(DEPTNO__in=DN).prefetch_related(Prefetch('emp_set',queryset=Emp.objects.filter(ENAME='swathi')))
+    
     print(LDEO)
 
     d={'LDEO':LDEO}
